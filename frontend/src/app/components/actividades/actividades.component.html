@@ -8,7 +8,7 @@
 
   <div class="container" style="background-color: gray;">
     <div class="row align-items-start">
-  <div class="btn-group my-3" role="group" aria-label="Basic checkbox toggle button group">
+  <div class="btn-group my-3" role="group" aria-label="Basic checkbox toggle button group" *ngFor="let actividad of allActividades">
     <input class="form-control" type="text" value="Tarea 1" aria-label="Disabled input example" disabled readonly>
     <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
     <label class="btn btn-primary" for="btncheck1">Iniciar</label>
@@ -18,6 +18,8 @@
     <label class="btn btn-primary" for="btncheck2">Terminar</label>
   </div>
   <br>
+  <button id="btnAddTarea" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+
   <!--<div class="btn-group my-3" role="group" aria-label="Basic checkbox toggle button group">
     <input class="form-control" type="text" value="Tarea 2" aria-label="Disabled input example" disabled readonly>
     <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
