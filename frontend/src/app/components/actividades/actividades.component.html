@@ -6,10 +6,10 @@
     </div>
   </div>
 
-  <div class="container" style="background-color: gray;">
+  <div class="container" style="background-color: rgb(177, 174, 174);">
     <div class="row align-items-start">
-  <div class="btn-group my-3" role="group" aria-label="Basic checkbox toggle button group">
-    <input class="form-control" type="text" value="Tarea 1" aria-label="Disabled input example" disabled readonly>
+  <div class="btn-group my-4" role="group" aria-label="Basic checkbox toggle button group" *ngFor="let actividad of allActividades">
+    <input class="form-control" type="text" value=" Tarea + {{actividad}}" aria-label="Disabled input example" disabled readonly>
     <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
     <label class="btn btn-primary" for="btncheck1">Iniciar</label>
     <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
@@ -18,26 +18,8 @@
     <label class="btn btn-primary" for="btncheck2">Terminar</label>
   </div>
   <br>
-  <!--<div class="btn-group my-3" role="group" aria-label="Basic checkbox toggle button group">
-    <input class="form-control" type="text" value="Tarea 2" aria-label="Disabled input example" disabled readonly>
-    <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
-    <label class="btn btn-primary" for="btncheck3">Iniciar</label>
-    <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
-    <label class="btn btn-primary" for="btncheck4">Terminar</label>
+  <div class="d-grid gap-2 col-6 mx-auto">
+    <button class="btn btn-primary" type="button">Agregar Tarea</button>
   </div>
-  <div class="btn-group my-3" role="group" aria-label="Basic checkbox toggle button group">
-    <input class="form-control" type="text" value="Tarea 3" aria-label="Disabled input example" disabled readonly>
-    <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
-    <label class="btn btn-primary" for="btncheck3">Iniciar</label>
-    <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
-    <label class="btn btn-primary" for="btncheck4">Terminar</label>
-  </div>
-  <div class="btn-group my-3" role="group" aria-label="Basic checkbox toggle button group">
-    <input class="form-control" type="text" value="Tarea 4" aria-label="Disabled input example" disabled readonly>
-    <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
-    <label class="btn btn-primary" for="btncheck3">Iniciar</label>
-    <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
-    <label class="btn btn-primary" for="btncheck4">Terminar</label>
-  </div>-->
 </div>
 </div>
