@@ -14,7 +14,8 @@
           </li>
         </ul>
         <div class="d-flex">
-          <button  class="btn btn-outline-success" routerLink="/login">{{navbarText}}</button>
+          <button *ngIf="authService.estoyLogged()" class="btn btn-outline-success" (click)="authService.logoutUser()">Salir</button>
+          <button *ngIf="!authService.estoyLogged()" class="btn btn-outline-success" routerLink="">{{navbarText}}</button>
           <button  class="btn btn-outline-success ms-3" routerLink="/registro">Registrarse</button>
         </div>
       </div>

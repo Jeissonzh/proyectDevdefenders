@@ -4,12 +4,12 @@ import { ActividadesComponent } from './components/actividades/actividades.compo
 import { InicioComponent } from './components/inicio/inicio.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistroComponent } from './components/registro/registro.component';
+import { AuthGuard } from './guard/auth.guard';
 
 const routes: Routes = [
-  {path:"", component: InicioComponent},
-  {path:"login", component: LoginComponent},
+  {path:"", component: LoginComponent},
   {path:"inicio", component: InicioComponent},
-  {path:"actividades", component: ActividadesComponent},
+  {path:"actividades", component: ActividadesComponent, canActivate: [AuthGuard]},
   {path:"registro", component: RegistroComponent}
 ];
 
