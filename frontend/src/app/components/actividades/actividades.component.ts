@@ -7,23 +7,23 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './actividades.component.html',
   styleUrls: ['./actividades.component.css']
 })
-export class ActividadComponent implements OnInit {
+export class ActividadesComponent implements OnInit {
   allActividades: any;
   allUsers: any;
 
   actividad: any = {
-    correo:"",
+    correo: "",
     estado: "",
     fechaEnProgreso: "",
-    fechaFinalizado:"",
-    fechaInicio:"",
-    nombre:"",
-    perfil:"",
-    tarea:""
+    fechaFinalizado: "",
+    fechaInicio: "",
+    nombre: "",
+    perfil: "",
+    tarea: ""
   }
 
-  constructor(private actividadService: ActividadService, private toastr: ToastrService) { 
-    this.allUsers = ["Camila","Jeisson","David"]
+  constructor(private actividadService: ActividadService, private toastr: ToastrService) {
+    this.allUsers = ["Camila", "Jeisson", "David"]
   }
 
   ngOnInit(): void {
@@ -31,24 +31,24 @@ export class ActividadComponent implements OnInit {
     this.getAllActividades()
   }
 
-  getAllActividades(){
-    this.actividadService.getAllActividades().subscribe((actividad)=>{
+  getAllActividades() {
+    this.actividadService.getAllActividades().subscribe((actividad) => {
       this.allActividades = actividad
     })
   }
 
-  saveActividad(): void{
-    if(this.actividad.nombre && this.actividad.correo && this.actividad.estado && this.actividad.perfil && this.actividad.tarea){
-      this.actividadService.postCreateActividad(this.actividad).subscribe((respuesta)=>{
-        if((respuesta as any).type=="error"){
+  saveActividad(): void {
+    if (this.actividad.nombre && this.actividad.correo && this.actividad.estado && this.actividad.perfil && this.actividad.tarea) {
+      this.actividadService.postCreateActividad(this.actividad).subscribe((respuesta) => {
+        if ((respuesta as any).type == "error") {
           this.toastr.error((respuesta as any).msg, 'Error!');
-        }else{
+        } else {
           document.getElementById("closeModal")?.click()
           this.toastr.success((respuesta as any).msg, 'Bien!');
           this.getAllActividades()
         }
       })
-    }else{
+    } else {
       this.toastr.error('Faltan campos por llenar', 'Error!');
     }
   }
