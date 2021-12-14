@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +10,7 @@ export class NavbarComponent implements OnInit {
 
   navbarText: string;
 
-  constructor() { 
+  constructor(public authService: AuthService) {
     this.navbarText = "Ingresar";
   }
 
